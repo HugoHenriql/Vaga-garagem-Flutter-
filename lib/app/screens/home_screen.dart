@@ -21,7 +21,6 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     print(controller.listParkSpot());
-    // controller.listCurrecies();
   }
   void _incrementCounter() {
     setState(() {
