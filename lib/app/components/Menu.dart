@@ -12,13 +12,14 @@ Widget Menu(BuildContext context){
               decoration: BoxDecoration(color: Colors.blue),
               margin: EdgeInsets.only(bottom: 10.0),
               currentAccountPicture: Container(
-                // decoration: BoxDecoration(
-                //     shape: BoxShape.circle,
-                    // image: DecorationImage(
-                    //     fit: BoxFit.fill,
-                    //
-                    //     // image:
-                    //     // NetworkImage("https://www.pngall.com/wp-content/uploads/5/Profile-PNG-File.png"))),
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.green,
+                  image: const DecorationImage(
+                    image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
               accountName: new Container(
                   child: Text(
