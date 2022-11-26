@@ -1,3 +1,4 @@
+import 'package:controle_estacionamento/app/components/Menu.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
@@ -5,9 +6,9 @@ import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import '../controllers/parking_spot_controller.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({super.key});
 
-  final String title;
+
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -33,8 +34,9 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         appBar: AppBar(
 
-          title: Text(widget.title),
+          title: Text('Inicio'),
         ),
+        drawer: Menu(context),
         body:
         Obx(() =>
         controller.isLoading.value
@@ -49,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   Card(
                     child:
-                    Text(controller.listParkingSpotObs[index].responsibleName),
+                    Text(controller.listParkingSpotObs[index].modelCar),
                   );
               }),
         )

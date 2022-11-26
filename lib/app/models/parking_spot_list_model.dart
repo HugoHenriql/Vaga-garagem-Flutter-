@@ -7,6 +7,6 @@ class ParkingSpotList {
   ParkingSpotList(this.listParkingSpot);
 
   ParkingSpotList.fromJson(List<dynamic> json):
-        listParkingSpot = List.from(json).map((item) => ParkingSpotModel.fromJson(item)).toList() ;
+        listParkingSpot = List.from(json).map((item) => ParkingSpotModel.fromJson(item)).toList();
 
 }

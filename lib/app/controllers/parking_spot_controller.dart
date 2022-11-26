@@ -18,5 +18,13 @@ class ParkingSpotController extends GetxController {
     return listParkingSpotObs;
   }
 
+  Future<dynamic> post(ParkingSpotModel objeto)  async {
+    isLoading.value = true;
+    var list = await parkingSpotService.fetchPostGarage(objeto);
+    isLoading.value = false;
+    update();
+    return list;
+  }
+
 
 }
