@@ -33,7 +33,7 @@ Widget Menu(BuildContext context){
                   )),
             ),
             ListTile(
-              title: Text("Inicio"),
+              title: Text("Veículos Estacionados"),
               onTap: (){
                 Navigator.push(
                   context,
@@ -41,7 +41,7 @@ Widget Menu(BuildContext context){
               },
             ),
             ListTile(
-              title: Text("Cadastrar"),
+              title: Text("Estacionar"),
               onTap: (){
                 Navigator.push(
                   context,

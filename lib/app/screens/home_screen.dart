@@ -1,4 +1,5 @@
 import 'package:controle_estacionamento/app/components/Menu.dart';
+import 'package:controle_estacionamento/app/screens/register_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
@@ -34,9 +35,16 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         appBar: AppBar(
 
-          title: Text('Inicio'),
+          title: Text('Veículos Estacionados'),
         ),
         drawer: Menu(context),
+        floatingActionButton: FloatingActionButton(
+          onPressed:
+            Get.to(const RegisterPage());
+
+        backgroundColor: Colors.green,
+        child: const Icon(Icons.add),
+        ),
         body:
         Obx(() =>
         controller.isLoading.value
@@ -54,6 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Text(controller.listParkingSpotObs[index].modelCar),
                   );
               }),
+
         )
         ) // This trailing comma makes auto-formatting nicer for build methods.
     );

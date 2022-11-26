@@ -83,7 +83,7 @@ class _RegisterPageState extends State<RegisterPage> {
       appBar: AppBar(
         backgroundColor: Colors.blue,
         elevation: 0.0,
-        title: Text('Cadastrar Estacionamento'),
+        title: Text('Estacionar'),
       ),
       body: SingleChildScrollView(
         child: Padding(
