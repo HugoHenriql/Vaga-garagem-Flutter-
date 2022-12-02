@@ -69,7 +69,6 @@ class _RegisterPageState extends State<RegisterPage> {
           icon: Icon(Icons.error, color: Colors.white),
           snackPosition: SnackPosition.BOTTOM,
           backgroundColor: Colors.blue,
-          //   borderColor: Colors.blue
           colorText: Colors.white
       );
     }
@@ -81,11 +80,12 @@ class _RegisterPageState extends State<RegisterPage> {
     //  print(widget.id);
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: Colors.blue,
         elevation: 0.0,
         title: Text('Estacionar'),
       ),
-      body: SingleChildScrollView(
+      body: Center (
         child: Padding(
           padding:  EdgeInsets.only(top: 100,bottom: 100,left: 18,right: 18),
           child: Container(

@@ -1,4 +1,5 @@
 class ParkingSpotModel {
+
   final String id;
   final String parkingSpotNumber;
   final String licensePlateCar;
@@ -30,6 +31,9 @@ class ParkingSpotModel {
         apartment= json['apartment'],
         block= json['block'];
 
+
+
+
   Map<String, dynamic> toJson() => {
     'id': id,
     'parkingSpotNumber': parkingSpotNumber,
@@ -42,6 +46,5 @@ class ParkingSpotModel {
     'apartment': apartment,
     'block': block,
   };
-
 
 }

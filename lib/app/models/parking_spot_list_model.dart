@@ -1,12 +1,13 @@
+
 import 'package:controle_estacionamento/app/models/parking_spot_model.dart';
 
 class ParkingSpotList {
 
-  final List<ParkingSpotModel> listParkingSpot;
+  final List<ParkingSpotModel> listParkingSpotModel;
 
-  ParkingSpotList(this.listParkingSpot);
+  ParkingSpotList(this.listParkingSpotModel);
 
   ParkingSpotList.fromJson(List<dynamic> json):
-        listParkingSpot = List.from(json).map((item) => ParkingSpotModel.fromJson(item)).toList();
+        listParkingSpotModel = List.from(json).map((item) => ParkingSpotModel.fromJson(item)).toList() ;
 
 }
