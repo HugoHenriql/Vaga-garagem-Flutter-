@@ -8,8 +8,6 @@ void main() {
   ControllerBinding().dependencies();
 
   runApp(const MyApp());
-
-
 }
 
 class MyApp extends StatelessWidget {

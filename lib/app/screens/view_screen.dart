@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -19,8 +18,6 @@ class ViewPage extends StatefulWidget {
 }
 
 class _EditPageState extends State<ViewPage> {
-
-
   var controller = ParkingSpotController.parkingSpotController;
 
   TextEditingController spotController = TextEditingController();
@@ -50,10 +47,10 @@ class _EditPageState extends State<ViewPage> {
     return Scaffold(
       appBar: AppBar(
           centerTitle: true,
-          title: Text('Detalhes do registro: ${spotController.text}', textAlign: TextAlign.center)
-      ),
+          title: Text('Detalhes do registro: ${spotController.text}',
+              textAlign: TextAlign.center)),
       drawer: Menu(context),
-      body: Center (
+      body: Center(
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -67,8 +64,7 @@ class _EditPageState extends State<ViewPage> {
                   textAlign: TextAlign.center,
                   controller: spotController,
                   keyboardType: TextInputType.number,
-                  style: TextStyle(fontSize: 16)
-              ),
+                  style: TextStyle(fontSize: 16)),
               Text(
                 'Placa do carro',
                 textAlign: TextAlign.left,
@@ -79,8 +75,7 @@ class _EditPageState extends State<ViewPage> {
                   textAlign: TextAlign.center,
                   controller: licenseController,
                   keyboardType: TextInputType.text,
-                  style: TextStyle(fontSize: 16)
-              ),
+                  style: TextStyle(fontSize: 16)),
               Text(
                 'Marca do carro',
                 textAlign: TextAlign.left,
@@ -91,8 +86,7 @@ class _EditPageState extends State<ViewPage> {
                   textAlign: TextAlign.center,
                   controller: brandController,
                   keyboardType: TextInputType.text,
-                  style: TextStyle(fontSize: 16)
-              ),
+                  style: TextStyle(fontSize: 16)),
               Text(
                 'Modelo do carro',
                 textAlign: TextAlign.left,
@@ -103,8 +97,7 @@ class _EditPageState extends State<ViewPage> {
                   textAlign: TextAlign.center,
                   controller: modelController,
                   keyboardType: TextInputType.text,
-                  style: TextStyle(fontSize: 16)
-              ),
+                  style: TextStyle(fontSize: 16)),
               Text(
                 'Cor do carro',
                 textAlign: TextAlign.left,
@@ -115,8 +108,7 @@ class _EditPageState extends State<ViewPage> {
                   textAlign: TextAlign.center,
                   controller: colorController,
                   keyboardType: TextInputType.text,
-                  style: TextStyle(fontSize: 16)
-              ),
+                  style: TextStyle(fontSize: 16)),
               Text(
                 'Proprietário do veículo',
                 textAlign: TextAlign.left,
@@ -127,8 +119,7 @@ class _EditPageState extends State<ViewPage> {
                   textAlign: TextAlign.center,
                   controller: responsibleController,
                   keyboardType: TextInputType.text,
-                  style: TextStyle(fontSize: 16)
-              ),
+                  style: TextStyle(fontSize: 16)),
               Text(
                 'Apartamento',
                 textAlign: TextAlign.left,
@@ -139,8 +130,7 @@ class _EditPageState extends State<ViewPage> {
                   textAlign: TextAlign.center,
                   controller: apartmentController,
                   keyboardType: TextInputType.number,
-                  style: TextStyle(fontSize: 16)
-              ),
+                  style: TextStyle(fontSize: 16)),
               Text(
                 'Bloco',
                 textAlign: TextAlign.left,
@@ -151,16 +141,13 @@ class _EditPageState extends State<ViewPage> {
                   textAlign: TextAlign.center,
                   controller: blockController,
                   keyboardType: TextInputType.text,
-                  style: TextStyle(fontSize: 16)
-              ),
+                  style: TextStyle(fontSize: 16)),
               ElevatedButton(
                   onPressed: () {
                     Get.to(MyHomePage());
                   },
-                  child: Text('Voltar')
-              )
-            ]
-        ),
+                  child: Text('Voltar'))
+            ]),
       ),
     );
   }

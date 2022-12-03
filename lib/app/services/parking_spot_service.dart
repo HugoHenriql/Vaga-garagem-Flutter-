@@ -1,21 +1,20 @@
 import 'dart:convert';
 
-
 import 'package:http/http.dart' as http;
 
 import '../models/parking_spot_list_model.dart';
 import '../models/parking_spot_model.dart';
 
-
-class ParkingSpotService{
-
-  String urlGetListParkingSpot = "https://controle-vaga.herokuapp.com/parking-spot";
+class ParkingSpotService {
+  String urlGetListParkingSpot =
+      "https://controle-vaga.herokuapp.com/parking-spot";
   String salvar = "https://controle-vaga.herokuapp.com/parking-spot";
   String edit = "https://controle-vaga.herokuapp.com/parking-spot/edit";
 
   dynamic _response;
-  ParkingSpotService(){
-    _response="";
+
+  ParkingSpotService() {
+    _response = "";
   }
 
   Future<ParkingSpotList> fetchListParkingSpot() async {
@@ -32,7 +31,8 @@ class ParkingSpotService{
 
   //create a fetch to delete
   Future<dynamic> fetchDeleteGarage(ParkingSpotModel objeto) async {
-    _response = await http.delete(Uri.parse(salvar+"/"+objeto.id.toString()));
+    _response =
+        await http.delete(Uri.parse(salvar + "/" + objeto.id.toString()));
     if (_response.statusCode == 200) {
       return _response.body;
     } else {
@@ -41,12 +41,12 @@ class ParkingSpotService{
   }
 
   Future<dynamic> fetchEditGarage(ParkingSpotModel objeto) async {
-    _response = await http.post(Uri.parse(edit),body: json.encode(objeto.toJson()),
+    _response = await http.post(Uri.parse(edit),
+        body: json.encode(objeto.toJson()),
         headers: {
           "Accept": "application/json",
           "content-type": "application/json"
-        }
-    );
+        });
     if (_response.statusCode == 200 || _response.statusCode == 201) {
       return _response.body;
     } else {
@@ -55,28 +55,17 @@ class ParkingSpotService{
   }
 
   Future<dynamic> fetchPostGarage(ParkingSpotModel garage) async {
-    _response = await http.post(Uri.parse(salvar),body: json.encode(garage.toJson()) ,
+    _response = await http.post(Uri.parse(salvar),
+        body: json.encode(garage.toJson()),
         headers: {
           "Accept": "application/json",
           "content-type": "application/json"
-        }
-    );
+        });
     if (_response.statusCode == 200 || _response.statusCode == 201) {
       Map<String, dynamic> retorno = json.decode(_response.body);
-      return ParkingSpotModel.fromJson(retorno) ;
+      return ParkingSpotModel.fromJson(retorno);
     } else {
       return false;
     }
-
   }
-
-
-
-
 }
-
-
-
-
-
-

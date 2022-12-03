@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -20,8 +19,6 @@ class EditPage extends StatefulWidget {
 }
 
 class _EditPageState extends State<EditPage> {
-
-
   var controller = ParkingSpotController.parkingSpotController;
 
   TextEditingController spotController = TextEditingController();
@@ -57,13 +54,12 @@ class _EditPageState extends State<EditPage> {
         "",
         responsibleController.text,
         apartmentController.text,
-        blockController.text
-    );
+        blockController.text);
 
-    var response =  await controller.editParkingSpot(parkingSpot);
+    var response = await controller.editParkingSpot(parkingSpot);
 
-    if(response != false){
-
+    if (response != false) {
+      Get.to(const MyHomePage());
       Get.snackbar(
         "Sucesso",
         "Salvo com Sucesso",
@@ -71,19 +67,14 @@ class _EditPageState extends State<EditPage> {
         snackPosition: SnackPosition.BOTTOM,
         backgroundColor: Colors.lightGreen,
         colorText: Colors.white,
-
       );
-
-    }else{
-      Get.snackbar(
-          "Houve um erro",
-          "Deu ruim",
+    } else {
+      Get.snackbar("Houve um erro", "Deu ruim",
           icon: Icon(Icons.error, color: Colors.white),
           snackPosition: SnackPosition.BOTTOM,
           backgroundColor: Colors.blue,
           //   borderColor: Colors.blue
-          colorText: Colors.white
-      );
+          colorText: Colors.white);
     }
   }
 
@@ -92,159 +83,129 @@ class _EditPageState extends State<EditPage> {
     return Scaffold(
       appBar: AppBar(
           centerTitle: true,
-          title: Text('Editar registro: ${spotController.text}', textAlign: TextAlign.center)
-      ),
+          title: Text('Editar registro: ${spotController.text}',
+              textAlign: TextAlign.center)),
       drawer: Menu(context),
-      body: Center (
-        child: Column(
+      body: Center(
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: <
+            Widget>[
+          Container(
+              width: 300,
+              decoration: BoxDecoration(boxShadow: []),
+              child: TextField(
+                controller: spotController,
+                decoration: const InputDecoration(
+                  prefixIcon: Icon(Icons.edit_road_sharp),
+                  labelText: 'Vaga',
+                  hintText: 'Informe a vaga do estacionamento',
+                ),
+              )),
+          SizedBox(
+            height: 10,
+          ),
+          Container(
+              width: 300,
+              decoration: BoxDecoration(boxShadow: []),
+              child: TextField(
+                controller: licenseController,
+                decoration: const InputDecoration(
+                    prefixIcon: Icon(Icons.card_membership),
+                    labelText: 'Placa',
+                    hintText: 'Informe a placa do carro'),
+              )),
+          Container(
+              width: 300,
+              decoration: BoxDecoration(boxShadow: []),
+              child: TextField(
+                controller: brandController,
+                decoration: const InputDecoration(
+                  prefixIcon: Icon(Icons.car_repair),
+                  labelText: 'Carro',
+                  hintText: 'Informe o nome do carro',
+                ),
+              )),
+          Container(
+              width: 300,
+              decoration: BoxDecoration(boxShadow: []),
+              child: TextField(
+                controller: modelController,
+                decoration: const InputDecoration(
+                    prefixIcon: Icon(Icons.model_training),
+                    labelText: 'Modelo do Carro',
+                    hintText: 'Informe a modelo do carro'),
+              )),
+          Container(
+              width: 300,
+              decoration: BoxDecoration(boxShadow: []),
+              child: TextField(
+                controller: colorController,
+                decoration: const InputDecoration(
+                    prefixIcon: Icon(Icons.color_lens),
+                    labelText: 'Cor do Carro',
+                    hintText: 'Informe a cor do carro'),
+              )),
+          Container(
+              width: 300,
+              decoration: BoxDecoration(boxShadow: []),
+              child: TextField(
+                controller: responsibleController,
+                decoration: const InputDecoration(
+                    prefixIcon: Icon(Icons.person),
+                    labelText: 'Responsável',
+                    hintText: 'Informe o nome do responsável'),
+              )),
+          Container(
+              width: 300,
+              decoration: BoxDecoration(boxShadow: []),
+              child: TextField(
+                controller: apartmentController,
+                decoration: const InputDecoration(
+                    prefixIcon: Icon(Icons.apartment),
+                    labelText: 'Endereço',
+                    hintText: 'Informe seu endereço'),
+              )),
+          Container(
+              width: 300,
+              padding: EdgeInsets.only(bottom: 20),
+              decoration: BoxDecoration(boxShadow: []),
+              child: TextField(
+                controller: blockController,
+                decoration: const InputDecoration(
+                    prefixIcon: Icon(Icons.maps_ugc),
+                    labelText: 'Complemento',
+                    hintText: 'Informe o complemento (se houver)'),
+              )),
+          Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Container(
-                  width: 300,
-                  decoration: BoxDecoration(boxShadow: [
-                  ]),
-                  child: TextField(
-                    controller:spotController ,
-                    decoration: const InputDecoration(
-                      prefixIcon: Icon(Icons.edit_road_sharp),
-                      labelText: 'Vaga',
-                      hintText: 'Informe a vaga do estacionamento',
-                    ),
-                  )
+            children: [
+              SizedBox(
+                width: 100,
+                child: TextButton(
+                    style: TextButton.styleFrom(backgroundColor: Colors.blue),
+                    onPressed: () {
+                      Get.to(const MyHomePage());
+                    },
+                    child: Text('Voltar',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                        ))),
               ),
-              SizedBox(height: 10,),
-              Container(
-                  width: 300,
-                  decoration: BoxDecoration(boxShadow: [
-                  ]),
-                  child: TextField(
-                    controller: licenseController,
-
-                    decoration: const InputDecoration(
-                        prefixIcon: Icon(Icons.card_membership),
-                        labelText: 'Placa',
-                        hintText: 'Informe a placa do carro'
-                    ),
-                  )
+              SizedBox(width: 10),
+              SizedBox(
+                width: 100,
+                child: TextButton(
+                    style: TextButton.styleFrom(backgroundColor: Colors.green),
+                    onPressed: save,
+                    child: Text('Salvar',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                        ))),
               ),
-              Container(
-                  width: 300,
-                  decoration: BoxDecoration(boxShadow: [
-                  ]),
-                  child: TextField(
-                    controller: brandController,
-
-                    decoration: const InputDecoration(
-                      prefixIcon: Icon(Icons.car_repair),
-                      labelText: 'Carro',
-                      hintText: 'Informe o nome do carro',
-                    ),
-                  )
-              ),
-              Container(
-                  width: 300,
-                  decoration: BoxDecoration(boxShadow: [
-                  ]),
-                  child: TextField(
-                    controller: modelController,
-
-                    decoration: const InputDecoration(
-                        prefixIcon: Icon(Icons.model_training),
-                        labelText: 'Modelo do Carro',
-                        hintText: 'Informe a modelo do carro'
-                    ),
-                  )
-              ),
-              Container(
-                  width: 300,
-                  decoration: BoxDecoration(boxShadow: [
-                  ]),
-                  child: TextField(
-                    controller: colorController,
-
-                    decoration: const InputDecoration(
-                        prefixIcon: Icon(Icons.color_lens),
-                        labelText: 'Cor do Carro',
-                        hintText: 'Informe a cor do carro'
-                    ),
-                  )
-              ),
-              Container(
-                  width: 300,
-                  decoration: BoxDecoration(boxShadow: [
-                  ]),
-                  child: TextField(
-                    controller: responsibleController,
-
-                    decoration: const InputDecoration(
-                        prefixIcon: Icon(Icons.person),
-                        labelText: 'Responsável',
-                        hintText: 'Informe o nome do responsável'
-                    ),
-                  )
-              ),
-              Container(
-                  width: 300,
-                  decoration: BoxDecoration(boxShadow: [
-                  ]),
-                  child: TextField(
-                    controller: apartmentController,
-
-                    decoration: const InputDecoration(
-                        prefixIcon: Icon(Icons.apartment),
-                        labelText: 'Endereço',
-                        hintText: 'Informe seu endereço'
-                    ),
-                  )
-              ),
-              Container(
-                  width: 300,
-                  padding: EdgeInsets.only(bottom: 20),
-                  decoration: BoxDecoration(boxShadow: [
-                  ]),
-                  child: TextField(
-                    controller: blockController,
-
-                    decoration: const InputDecoration(
-                        prefixIcon: Icon(Icons.maps_ugc),
-                        labelText: 'Complemento',
-                        hintText: 'Informe o complemento (se houver)'
-                    ),
-                  )
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(
-
-                    width: 100,
-                    child: TextButton(
-                        style: TextButton.styleFrom(backgroundColor: Colors.blue
-                        ),
-                        onPressed:() {
-                          Get.to(const MyHomePage());}, child: Text('Voltar',                              style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                    )
-                    )),
-                  ),
-                  SizedBox(width: 10),
-                  SizedBox(
-
-                    width: 100,
-                    child: TextButton(
-                        style: TextButton.styleFrom(backgroundColor: Colors.green
-                        ),
-                        onPressed:save, child: Text('Salvar',                              style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                    )
-                    )),
-                  ),
-                ],
-              )
-            ]
-        ),
+            ],
+          )
+        ]),
       ),
     );
   }
