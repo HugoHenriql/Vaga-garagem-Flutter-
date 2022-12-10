@@ -43,110 +43,119 @@ class _EditPageState extends State<ViewPage> {
   }
 
   @override
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
           centerTitle: true,
           title: Text('Detalhes do registro: ${spotController.text}',
-              textAlign: TextAlign.center)),
+              textAlign: TextAlign.center
+          )),
       drawer: Menu(context),
       body: Center(
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+
               Text(
-                'Número da Vaga',
+                'N° da Vaga',
                 textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.red),
               ),
+
+
               TextField(
                   enabled: false,
                   textAlign: TextAlign.center,
                   controller: spotController,
                   keyboardType: TextInputType.number,
-                  style: TextStyle(fontSize: 16)),
+                  style: TextStyle(fontSize: 32)),
               Text(
-                'Placa do carro',
+                'Placa ',
                 textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
               ),
+
               TextField(
                   enabled: false,
                   textAlign: TextAlign.center,
                   controller: licenseController,
                   keyboardType: TextInputType.text,
-                  style: TextStyle(fontSize: 16)),
+                  style: TextStyle(fontSize: 32)),
+
               Text(
-                'Marca do carro',
+                'Marca ',
                 textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
               ),
               TextField(
                   enabled: false,
                   textAlign: TextAlign.center,
                   controller: brandController,
                   keyboardType: TextInputType.text,
-                  style: TextStyle(fontSize: 16)),
+                  style: TextStyle(fontSize: 32)),
               Text(
-                'Modelo do carro',
+                'Modelo ',
                 textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
               ),
               TextField(
                   enabled: false,
                   textAlign: TextAlign.center,
                   controller: modelController,
                   keyboardType: TextInputType.text,
-                  style: TextStyle(fontSize: 16)),
+                  style: TextStyle(fontSize: 32)),
               Text(
-                'Cor do carro',
+                'Cor do Automóvel',
                 textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
               ),
               TextField(
                   enabled: false,
                   textAlign: TextAlign.center,
                   controller: colorController,
                   keyboardType: TextInputType.text,
-                  style: TextStyle(fontSize: 16)),
+                  style: TextStyle(fontSize: 32)),
               Text(
-                'Proprietário do veículo',
+                'Dono ',
                 textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
               ),
               TextField(
                   enabled: false,
                   textAlign: TextAlign.center,
                   controller: responsibleController,
                   keyboardType: TextInputType.text,
-                  style: TextStyle(fontSize: 16)),
+                  style: TextStyle(fontSize: 32)),
               Text(
-                'Apartamento',
+                'Lote',
                 textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
               ),
               TextField(
                   enabled: false,
                   textAlign: TextAlign.center,
                   controller: apartmentController,
                   keyboardType: TextInputType.number,
-                  style: TextStyle(fontSize: 16)),
+                  style: TextStyle(fontSize: 32)),
               Text(
                 'Bloco',
                 textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
               ),
               TextField(
                   enabled: false,
+                  cursorColor: Colors.red,
                   textAlign: TextAlign.center,
                   controller: blockController,
                   keyboardType: TextInputType.text,
-                  style: TextStyle(fontSize: 16)),
+                  style: TextStyle(fontSize: 32)),
               ElevatedButton(
                   onPressed: () {
                     Get.to(MyHomePage());
                   },
-                  child: Text('Voltar'))
+                  child: Text('Volte')
+              )
             ]),
       ),
     );

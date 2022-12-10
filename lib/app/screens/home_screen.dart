@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
           onPressed: () {
             Get.to(const RegisterPage());
           },
-          backgroundColor: Colors.green,
+          backgroundColor: Colors.red,
           child: const Icon(Icons.local_parking),
         ),
         body: Obx(() => controller.isLoading.value

@@ -59,8 +59,8 @@ class _RegisterPageState extends State<RegisterPage> {
           MaterialPageRoute(builder: (BuildContext context) => MyHomePage()),
           (Route<dynamic> route) => false);
     } else {
-      Get.snackbar("Houve um erro", "Deu ruim",
-          icon: Icon(Icons.error, color: Colors.white),
+      Get.snackbar("Houve um erro","Tens um erro ",
+          icon: Icon(Icons.warning, color: Colors.red),
           snackPosition: SnackPosition.BOTTOM,
           backgroundColor: Colors.blue,
           colorText: Colors.white);
@@ -73,7 +73,7 @@ class _RegisterPageState extends State<RegisterPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.red,
         elevation: 0.0,
         title: Text('Estacionar'),
       ),
@@ -91,21 +91,41 @@ class _RegisterPageState extends State<RegisterPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                    width: 300,
-                    decoration: BoxDecoration(boxShadow: []),
-                    child: TextField(
-                      controller: spotController,
-                      decoration: const InputDecoration(
-                        prefixIcon: Icon(Icons.edit_road_sharp),
-                        labelText: 'Vaga',
-                        hintText: 'Informe a vaga do estacionamento',
-                      ),
-                    )),
+                width: 300,
+                decoration: BoxDecoration(boxShadow: []),
+                child: TextField(
+                  controller: modelController,
+                  decoration: const InputDecoration(
+                      prefixIcon: Icon(Icons.model_training),
+                      labelText: 'Modelo do Carro',
+                      hintText: 'Informe a modelo do carro'),
+                )),
                 SizedBox(
                   height: 10,
                 ),
                 Container(
-                    width: 300,
+                    width: 700,
+                    decoration: BoxDecoration(boxShadow: []),
+                    child: TextField(
+                      controller: licenseController,
+                      decoration: const InputDecoration(
+                          prefixIcon: Icon(Icons.card_travel),
+                          labelText: 'Placa',
+                          hintText: 'Informe a placa do carro por gentileza.'),
+                    )),
+                Container(
+                    width: 700,
+                    decoration: BoxDecoration(boxShadow: []),
+                    child: TextField(
+                      controller: brandController,
+                      decoration: const InputDecoration(
+                        prefixIcon: Icon(Icons.car_repair),
+                        labelText: 'Carro',
+                        hintText: 'Informe o nome do carro',
+                      ),
+                    )),
+                Container(
+                    width: 700,
                     decoration: BoxDecoration(boxShadow: []),
                     child: TextField(
                       controller: licenseController,
@@ -118,69 +138,48 @@ class _RegisterPageState extends State<RegisterPage> {
                     width: 300,
                     decoration: BoxDecoration(boxShadow: []),
                     child: TextField(
-                      controller: brandController,
-                      decoration: const InputDecoration(
-                        prefixIcon: Icon(Icons.car_repair),
-                        labelText: 'Carro',
-                        hintText: 'Informe o nome do carro',
-                      ),
-                    )),
-                Container(
-                    width: 300,
-                    decoration: BoxDecoration(boxShadow: []),
-                    child: TextField(
-                      controller: modelController,
-                      decoration: const InputDecoration(
-                          prefixIcon: Icon(Icons.model_training),
-                          labelText: 'Modelo do Carro',
-                          hintText: 'Informe a modelo do carro'),
-                    )),
-                Container(
-                    width: 300,
-                    decoration: BoxDecoration(boxShadow: []),
-                    child: TextField(
                       controller: colorController,
                       decoration: const InputDecoration(
-                          prefixIcon: Icon(Icons.color_lens),
+                          prefixIcon: Icon(Icons.border_color),
                           labelText: 'Cor do Carro',
                           hintText: 'Informe a cor do carro'),
                     )),
                 Container(
-                    width: 300,
+                    width: 500,
                     decoration: BoxDecoration(boxShadow: []),
                     child: TextField(
                       controller: responsibleController,
                       decoration: const InputDecoration(
-                          prefixIcon: Icon(Icons.person),
+                          prefixIcon: Icon(Icons.person_add_alt_1),
                           labelText: 'Responsável',
-                          hintText: 'Informe o nome do responsável'),
+                          hintText: 'Informe o nome do responsável desete veiculo'),
                     )),
                 Container(
-                    width: 300,
+                    width: 700,
                     decoration: BoxDecoration(boxShadow: []),
                     child: TextField(
                       controller: apartmentController,
                       decoration: const InputDecoration(
-                          prefixIcon: Icon(Icons.apartment),
+                          prefixIcon: Icon(Icons.houseboat),
                           labelText: 'Endereço',
-                          hintText: 'Informe seu endereço'),
+                          hintText: 'Informe end.'),
                     )),
                 Container(
-                    width: 300,
-                    padding: EdgeInsets.only(bottom: 20),
+                    width: 500,
+                    padding: EdgeInsets.only(bottom: 40),
                     decoration: BoxDecoration(boxShadow: []),
                     child: TextField(
                       controller: blockController,
                       decoration: const InputDecoration(
-                          prefixIcon: Icon(Icons.maps_ugc),
+                          prefixIcon: Icon(Icons.maps_ugc_sharp),
                           labelText: 'Complemento',
                           hintText: 'Informe o complemento (se houver)'),
                     )),
                 SizedBox(
-                  width: 100,
+                  width: 130,
                   child: TextButton(
                       style:
-                          TextButton.styleFrom(backgroundColor: Colors.green),
+                          TextButton.styleFrom(backgroundColor: Colors.red),
                       onPressed: save,
                       child: Text('Cadastrar',
                           style: TextStyle(

@@ -62,7 +62,7 @@ class _EditPageState extends State<EditPage> {
       Get.to(const MyHomePage());
       Get.snackbar(
         "Sucesso",
-        "Salvo com Sucesso",
+        "Salvo ",
         icon: Icon(Icons.check, color: Colors.white),
         snackPosition: SnackPosition.BOTTOM,
         backgroundColor: Colors.lightGreen,
